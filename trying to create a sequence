@@ -15,9 +15,9 @@ let objects = [];
 
 let found_a_person;
 
-var personX = 0;
-var cup = 0;
-var cellphone = 0;
+var personx = 0;
+var cupx = 0;
+var cellphonex = 0;
 
 
 function setup() {
@@ -49,7 +49,7 @@ function draw() {
   for (let i = 0; i < objects.length; i++) {
     
    if(objects[i].label == "person"){
-      personX = objects[i].x * width
+      personx = objects[i].x * width
    }
     
     if(objects[i].label == "cup"){
@@ -59,16 +59,17 @@ function draw() {
     if(objects[i].label == "cellphone"){
       cellphonex = objects[i].x * width
     }
-      if (cellphonex <= 106 && bottlex <= 212 && vasex <= 320){
-      
-    noStroke();
-    fill(0, 255, 0);
-    text(objects[i].label, objects[i].x * width, objects[i].y * height - 5);
+      if (cupx < personx && personx < cellphone){   
+         background(255);
+        noStroke();
+        fill(0, 255, 0);
+        text ("unlocked");
+    //text(objects[i].label, objects[i].x * width, objects[i].y * height - 5);
     noFill();
     strokeWeight(4);
     stroke(0, 255, 0);
     rect(objects[i].x * width, objects[i].y * height, objects[i].w * width, objects[i].h * height);
-  if (objects[i].label = "person")
+   if (objects[i].label = "person")
     found_a_person = true
     
 }
